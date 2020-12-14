@@ -1,6 +1,6 @@
 resource "pagerduty_escalation_policy" "this" {
   count     = var.enabled ? 1 : 0
-  name      = var_name
+  name      = var.name
   num_loops = var.repeat_loops
 
   rule {
@@ -8,7 +8,7 @@ resource "pagerduty_escalation_policy" "this" {
 
     target {
       type = var.type
-      id   = var.id
+      id   = var.escalation_policy_target_id
     }
   }
 }

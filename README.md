@@ -20,7 +20,6 @@ module "pagerduty_escalation" {
   source                      = "git@github.com:hazelops/terraform-pagerduty-escalation-policy.git"
   escalation_policy_target_id = module.pagerduty_schedule.id
   name                        = "test"
-  pagerduty_token             = "<token_value>"
 }
 
 ```
@@ -34,7 +33,6 @@ module "pagerduty_escalation" {
   escalation_delay_in_minutes = 10
   escalation_policy_target_id = module.pagerduty_user.id
   name                        = "test"
-  pagerduty_token             = "<token_value>"
   repeat_loops                = 10
   type                        = "user"
 }
@@ -61,7 +59,6 @@ No requirements.
 | escalation\_delay\_in\_minutes | n/a | `number` | `15` | no |
 | escalation\_policy\_target\_id | n/a | `any` | n/a | yes |
 | name | Name of escalation policy. Make it meaningful | `any` | n/a | yes |
-| pagerduty\_token | n/a | `any` | n/a | yes |
 | repeat\_loops | The number of times the escalation policy will repeat after reaching the end of its escalation. | `number` | `2` | no |
 | type | Can be user, schedule, user\_reference or schedule\_reference | `string` | `"schedule"` | no |
 

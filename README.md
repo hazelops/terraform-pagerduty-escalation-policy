@@ -16,6 +16,9 @@ This module provides settings:
 ### Miminal setup
 
 ```hcl
+provider "pagerduty" {
+  token = "Pagerduty_Token"
+}
 module "pagerduty_escalation" {
   source                      = "git@github.com:hazelops/terraform-pagerduty-escalation-policy.git"
   escalation_policy_target_id = module.pagerduty_schedule.id
@@ -27,6 +30,9 @@ module "pagerduty_escalation" {
 ### Full setup
 
 ```hcl
+provider "pagerduty" {
+  token = "Pagerduty_Token"
+}
 module "pagerduty_escalation" {
   source                      = "git@github.com:hazelops/terraform-pagerduty-escalation-policy.git"
   enabled                     = true

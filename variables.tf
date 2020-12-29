@@ -22,4 +22,10 @@ variable "escalation_delay_in_minutes" {
   default = 15
 }
 
-variable "escalation_policy_target_id" {}
+variable "escalation_policy_users_targets" {
+  default = []
+}
+
+variable "escalation_policy_schedule_targets" {
+  default = []
+}

@@ -20,9 +20,9 @@ provider "pagerduty" {
   token = "Pagerduty_Token"
 }
 module "pagerduty_escalation" {
-  source  = "hazelops/escalation-policy/pagerduty"
-  escalation_policy_users_targets =    [module.pagerduty_users.id]
-  name                        = "test"
+  source                          = "hazelops/escalation-policy/pagerduty"
+  escalation_policy_users_targets = [module.pagerduty_users.id]
+  name                            = "test"
 }
 
 ```
@@ -34,13 +34,13 @@ provider "pagerduty" {
   token = "Pagerduty_Token"
 }
 module "pagerduty_escalation" {
-  source  = "hazelops/escalation-policy/pagerduty"
-  enabled                     = true
-  escalation_delay_in_minutes = 10
-  escalation_policy_users_targets =    [module.pagerduty_users.id]
+  source                             = "hazelops/escalation-policy/pagerduty"
+  enabled                            = true
+  escalation_delay_in_minutes        = 10
+  escalation_policy_users_targets    = [module.pagerduty_users.id]
   escalation_policy_schedule_targets = [module.pagerduty_schedule.id]
-  name                        = "test"
-  repeat_loops                = 10
+  name                               = "test"
+  repeat_loops                       = 10
 }
 
 ```
@@ -81,29 +81,3 @@ No requirements.
 
 ![Hazelops logo](https://avatars0.githubusercontent.com/u/63737915?s=25&v=4) [Terraform Pagerduty Escalation Policy
 ](https://registry.terraform.io/modules/hazelops/escalation-policy/pagerduty/latest)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

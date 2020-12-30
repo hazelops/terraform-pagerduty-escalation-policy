@@ -22,5 +22,4 @@ resource "pagerduty_escalation_policy" "this" {
       }
     }
   }
-
 }

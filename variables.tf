@@ -13,11 +13,6 @@ variable "repeat_loops" {
   default = 2
 }
 
-variable "type" {
-  description = "Can be user, schedule, user_reference or schedule_reference"
-  default     = "schedule"
-}
-
 variable "escalation_delay_in_minutes" {
   default = 15
 }

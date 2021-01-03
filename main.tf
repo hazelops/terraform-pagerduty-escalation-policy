@@ -6,9 +6,20 @@ resource "pagerduty_escalation_policy" "this" {
   rule {
     escalation_delay_in_minutes = var.escalation_delay_in_minutes
 
-    target {
-      type = var.type
-      id   = var.escalation_policy_target_id
+    dynamic "target" {
+      for_each = var.escalation_policy_users_targets
+      content {
+        type = "user"
+        id   = target.value
+      }
+    }
+
+    dynamic "target" {
+      for_each = var.escalation_policy_schedule_targets
+      content {
+        type = "schedule"
+        id   = target.value
+      }
     }
   }
 }

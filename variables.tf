@@ -13,13 +13,14 @@ variable "repeat_loops" {
   default = 2
 }
 
-variable "type" {
-  description = "Can be user, schedule, user_reference or schedule_reference"
-  default     = "schedule"
-}
-
 variable "escalation_delay_in_minutes" {
   default = 15
 }
 
-variable "escalation_policy_target_id" {}
+variable "escalation_policy_users_targets" {
+  default = []
+}
+
+variable "escalation_policy_schedule_targets" {
+  default = []
+}
